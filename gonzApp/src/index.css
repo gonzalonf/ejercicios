@@ -1,0 +1,41 @@
+* {
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+body {
+	font-size: 20px;
+}
+/***********RESET************/
+nav {
+	text-align: center;
+}
+nav a {
+	margin: 10px;
+	text-decoration: none;
+	font-weight: bold;
+}
+nav a:hover {
+	color: yellow;
+}
+
+.contents {
+	width: 70%;
+	margin: auto;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 200px;
+	height: 200px;
+}
+.contents-footer {
+	background: silver;
+}
+.contents-header {
+	background: orange;
+}
+.contents-container {
+	background: lightgreen;
+}
+.home-container {
+	background: lightblue;
+}
