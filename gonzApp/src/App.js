@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+
+// import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Router, Route } from 'react-router-dom';
+
 import createBrowserHistory from 'history/createBrowserHistory';
 
 import './index.css';
 import Header from './components/Header';
 import Home from './components/Home';
-import Content from './components/Content';
+import Todo from './components/Todo';
 import Footer from './components/Footer';
 import Other from './components/Other'
+import TicTacToe from './components/TicTacToe';
 
-const history = createBrowserHistory();
+const history = createBrowserHistory({});
+
 
 class App extends Component {
 	constructor() {
@@ -26,9 +31,10 @@ class App extends Component {
 						<Header title={this.state.title} />
 
 						<Route exact path="/" component={Home} />
-						<Route exact path="/content" component={Content} />
+						<Route exact path="/todo" component={Todo} />
 						<Route exact path="/other-content" component={Other} />
 						<Route exact path="/another" render={()=> <h3>Yet Another content</h3>} />
+						<Route exact path="/tic" render={TicTacToe} />
 
 						<Footer />
 					</div>

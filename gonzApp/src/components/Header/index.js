@@ -7,10 +7,12 @@ const Header = (props) => {
 		<header className="contents-header">
 			<h1>{ title }</h1>
 			<nav >
-				<a href="/">Index</a>
-				<a href="content">Content</a>
+				<Link to="/"> HOME </Link>
+				<Link to="/todo"> Todo App </Link>
 				<Link to="/other-content"> Other </Link>
 				<Link to="/another"> Another </Link>
+				<Link to="/tic"> TicTacToe! </Link>
+
 			</nav>
 		</header>
 	);

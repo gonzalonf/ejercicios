@@ -23,9 +23,12 @@ nav a:hover {
 	width: 70%;
 	margin: auto;
 	text-align: center;
-	vertical-align: middle;
-	line-height: 200px;
-	height: 200px;
+	/*vertical-align: middle;*/
+	/*line-height: 200px;*/
+	min-height: 200px;
+}
+.contents ul li {
+	list-style: none;
 }
 .contents-footer {
 	background: silver;
