@@ -2,7 +2,7 @@ import React from 'react';
 
 const TicTacToe = () => {
 		return (
-			<div>Let The Game begin!</div>
+			<div className="contents">Let The Game begin!</div>
 		);
 }
 

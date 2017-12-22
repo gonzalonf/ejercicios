@@ -7,6 +7,7 @@ const Tasks = (props) => {
 		<li key={key}>
 			<b>{`${item.text}  `}</b>
 			{item.complete ? 'COMPLETED' : 'PENDING'}
+			<button className="delete-btn">DELETE</button>
 		</li>);
 	})
 	return (

@@ -9,10 +9,7 @@ const Header = (props) => {
 			<nav >
 				<Link to="/"> HOME </Link>
 				<Link to="/todo"> Todo App </Link>
-				<Link to="/other-content"> Other </Link>
-				<Link to="/another"> Another </Link>
 				<Link to="/tic"> TicTacToe! </Link>
-
 			</nav>
 		</header>
 	);

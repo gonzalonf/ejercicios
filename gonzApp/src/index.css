@@ -25,13 +25,14 @@ nav a:hover {
 	text-align: center;
 	/*vertical-align: middle;*/
 	/*line-height: 200px;*/
-	min-height: 200px;
+	min-height: 400px;
 }
 .contents ul li {
 	list-style: none;
 }
 .contents-footer {
 	background: silver;
+	height: 100vh;
 }
 .contents-header {
 	background: orange;
@@ -41,4 +42,17 @@ nav a:hover {
 }
 .home-container {
 	background: lightblue;
+}
+.delete-btn {
+	background: pink;
+	color: red;
+	font-weight: bold;
+	padding: 4px;
+	margin: 2px;
+}
+.delete-btn:hover {
+	background: red;
+	color: white;
+	cursor: pointer;
+
 }

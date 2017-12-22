@@ -10,7 +10,6 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Todo from './components/Todo';
 import Footer from './components/Footer';
-import Other from './components/Other'
 import TicTacToe from './components/TicTacToe';
 
 const history = createBrowserHistory({});
@@ -32,8 +31,6 @@ class App extends Component {
 
 						<Route exact path="/" component={Home} />
 						<Route exact path="/todo" component={Todo} />
-						<Route exact path="/other-content" component={Other} />
-						<Route exact path="/another" render={()=> <h3>Yet Another content</h3>} />
 						<Route exact path="/tic" render={TicTacToe} />
 
 						<Footer />
