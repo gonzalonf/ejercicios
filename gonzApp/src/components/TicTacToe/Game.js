@@ -1,5 +1,6 @@
 import React from 'react';
 import Board from './Board';
+import Otro from './Otro';
 import { calculateWinner } from './helpers';
 
 class Game extends React.Component {
@@ -77,6 +78,7 @@ class Game extends React.Component {
           <div>{status}</div>
           <ol>{moves}</ol>
         </div>
+		<Otro />
       </div>
     );
   }

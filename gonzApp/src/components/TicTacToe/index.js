@@ -1,9 +1,11 @@
 import React from 'react';
+import ReactDOM from 'react'
+import Game from './Game';
 
 const TicTacToe = () => {
-		return (
-			<div className="contents">Let The Game begin!</div>
-		);
+	return (
+		<Game />
+	);
 }
 
 export default TicTacToe;
