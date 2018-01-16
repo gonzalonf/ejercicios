@@ -33,7 +33,7 @@ class Home extends React.Component
 
 		return (
 		<div className="contents home-container">
-			<h1 style={this.state.titleStyle}>Bienvenido al HOME, wachos</h1>
+			<h1 style={this.state.titleStyle}>Bienvenido al HOME, wachos!</h1>
 
 			<button
 				onClick={this.handleClick.bind(this)}
