@@ -27,6 +27,10 @@ class Todo extends React.Component {
 	handleChange(e) {
 		this.setState({input: e.target.value});
 	}
+	handleSubmit(e) {
+		e.preventDefault();
+		this.createTodo();
+	}
 	createTodo() {
 		const inputValue = this.state.input;
 		if (inputValue) {
@@ -44,8 +48,15 @@ class Todo extends React.Component {
 		return (
 			<div className="contents contents-container">
 				<h1>ToDo List</h1>
-				<input type="text" onChange={this.handleChange.bind(this)}/>
-				<button onClick={this.createTodo.bind(this)}>CREATE</button>
+
+				<form action="" onSubmit={this.handleSubmit.bind(this)}>
+					<input
+						type="text"
+						onChange={this.handleChange.bind(this)}
+					/>
+				</form>
+				<button onClick={this.createTodo.bind(this)}>Add</button>
+
 				<br/>
 				<button onClick={this.reloadTodos.bind(this)}>REOLAD</button>
 				<Tasks onClick={this.deleteTodo.bind(this)} data={this.state.todos} />
