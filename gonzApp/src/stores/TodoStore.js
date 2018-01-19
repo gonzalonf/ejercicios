@@ -32,7 +32,8 @@ class TodoStore extends EventEmitter {
 		this.emit("change");
 	}
 	deleteTodo(id) {
-		const newList = this.todos.filter( item => item.id !== id );
+		const itemId = Number(id);
+		const newList = this.todos.filter( item => item.id !== itemId );
 		this.todos = newList;
 		this.emit('change');
 	}
@@ -60,6 +61,4 @@ class TodoStore extends EventEmitter {
 
 const todoStore = new TodoStore();
 dispatcher.register(todoStore.handleActions.bind(todoStore));
-// window.todoStore = todoStore;
-// window.dispatcher = dispatcher;
 export default todoStore;

@@ -38,8 +38,7 @@ class Todo extends React.Component {
 		}
 	}
 	deleteTodo(e) {
-		// ()=>console.log(data[key])
-		console.log(e.target);
+		TodoActions.deleteTodo(e.target.id)
 	}
 	reloadTodos() {
 		TodoActions.reloadTodos();
@@ -59,7 +58,7 @@ class Todo extends React.Component {
 
 				<br/>
 				<button onClick={this.reloadTodos.bind(this)}>REOLAD</button>
-				<Tasks onClick={this.deleteTodo.bind(this)} data={this.state.todos} />
+				<Tasks onClick={this.deleteTodo} data={this.state.todos} />
 			</div>
 		);
 	}
