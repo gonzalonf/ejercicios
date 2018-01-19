@@ -3,6 +3,7 @@ import todoStore from '../../stores/TodoStore';
 import * as TodoActions from '../../actions/TodoActions';
 import Tasks from './Tasks';
 
+// Todos...
 class Todo extends React.Component {
 	constructor() {
 		super();
