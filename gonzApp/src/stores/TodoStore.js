@@ -40,6 +40,9 @@ class TodoStore extends EventEmitter {
 	getAll() {
 		return this.todos;
 	}
+	getCount() {
+		return this.todos.length;
+	}
 	handleActions(action) {
 		switch (action.type) {
 			case 'CREATE_TODO':

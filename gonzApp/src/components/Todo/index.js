@@ -45,20 +45,25 @@ class Todo extends React.Component {
 	}
 	render() {
 		return (
-			<div className="contents contents-container">
-				<h1>ToDo List</h1>
+			<div className="container">
+				<div className="wrapper">
+					<div className="todos">
 
-				<form action="" onSubmit={this.handleSubmit.bind(this)}>
-					<input
-						type="text"
-						onChange={this.handleChange.bind(this)}
-					/>
-				</form>
-				<button onClick={this.createTodo.bind(this)}>Add</button>
+						<h1>ToDo List</h1>
+						<form action="" onSubmit={this.handleSubmit.bind(this)}>
+							<input
+								type="text"
+								onChange={this.handleChange.bind(this)}
+							/>
+						</form>
+						<button onClick={this.createTodo.bind(this)}>Add</button>
 
-				<br/>
-				<button onClick={this.reloadTodos.bind(this)}>REOLAD</button>
-				<Tasks onClick={this.deleteTodo} data={this.state.todos} />
+						<br/>
+						<button onClick={this.reloadTodos.bind(this)}>REOLAD</button>
+						<Tasks onClick={this.deleteTodo} data={this.state.todos} />
+
+					</div>
+				</div>
 			</div>
 		);
 	}

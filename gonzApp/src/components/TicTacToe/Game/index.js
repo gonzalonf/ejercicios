@@ -1,7 +1,10 @@
 import React from 'react';
-import Board from './Board';
-import Otro from './Otro';
-import { calculateWinner } from './helpers';
+import Board from '../Board';
+import { calculateWinner } from '../helpers';
+// import TicTacToeStore from '../../../stores/TicTacToeStore';
+// import * as TodoActions from '../../../actions/TodoActions';
+
+
 
 class Game extends React.Component {
   constructor(props) {
@@ -78,7 +81,6 @@ class Game extends React.Component {
           <div>{status}</div>
           <ol>{moves}</ol>
         </div>
-		<Otro />
       </div>
     );
   }
@@ -86,4 +88,3 @@ class Game extends React.Component {
 
 
 export default Game;
-
