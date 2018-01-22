@@ -1,23 +1,15 @@
 import React from 'react';
 import Board from '../Board';
 import { calculateWinner } from '../helpers';
-// import TicTacToeStore from '../../../stores/TicTacToeStore';
-// import * as TodoActions from '../../../actions/TodoActions';
+import TicTacToeStore from '../../../stores/TicTacToeStore';
+import * as TicTacToeActions from '../../../actions/TicTacToeActions';
 
 
 
 class Game extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      history: [
-        {
-          squares: Array(9).fill(null)
-        }
-      ],
-      stepNumber: 0,
-      xIsNext: true
-    };
+    this.state = TicTacToeStore.getInitialState();
   }
 
   handleClick(i) {
@@ -28,15 +20,9 @@ class Game extends React.Component {
       return;
     }
     squares[i] = this.state.xIsNext ? "X" : "O";
-    this.setState({
-      history: history.concat([
-        {
-          squares: squares
-        }
-      ]),
-      stepNumber: history.length,
-      xIsNext: !this.state.xIsNext
-    });
+
+	TicTacToeStore.updateTable(squares);
+
   }
 
   jumpTo(step) {

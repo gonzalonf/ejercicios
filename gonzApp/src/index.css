@@ -22,14 +22,14 @@ nav a:hover {
 }
 
 .wrapper {
-	max-width: 1000px;
+	max-width: 700px;
 	margin: auto;
+	padding: 20px 0;
 }
 .home {
 	background: lightblue;
 	width: 100%;
 	min-height: 600px;
-	margin: 20px auto;
 	text-align: center;
 	padding: 40px;
 	box-shadow: 2px 2px 2px gray;
@@ -38,7 +38,7 @@ nav a:hover {
 	background: orange;
 	width: 100%;
 	min-height: 600px;
-	margin: 20px auto;
+	margin: auto;
 	text-align: center;
 	padding: 40px;
 	box-shadow: 2px 2px 2px gray;
@@ -47,7 +47,7 @@ nav a:hover {
 	background: lightgreen;
 	width: 100%;
 	min-height: 600px;
-	margin: 20px auto;
+	margin: auto;
 	text-align: center;
 	padding: 40px;
 	box-shadow: 2px 2px 2px gray;
@@ -68,7 +68,9 @@ nav a:hover {
 }
 .contents-footer {
 	background: silver;
-	height: 100vh;
+	height: 200px;
+	padding: 50px;
+	text-align: center;
 }
 .contents-header {
 	background: orange;
