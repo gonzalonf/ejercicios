@@ -9,34 +9,40 @@ import * as TicTacToeActions from '../../../actions/TicTacToeActions';
 class Game extends React.Component {
   constructor(props) {
     super(props);
-    this.state = TicTacToeStore.getInitialState();
+	this.getTableState = this.getTableState.bind(this);
+    this.state = TicTacToeStore.getState();
   }
 
+  getTableState() {
+	  this.setState(TicTacToeStore.getState());
+  }
+
+  componentDidMount() {
+	  TicTacToeStore.on('change', this.getTableState );
+  }
+  componentWillUnmount() {
+	  TicTacToeStore.removeListener('change', this.getTableState );
+  }
   handleClick(i) {
-    const history = this.state.history.slice(0, this.state.stepNumber + 1);
+    const history = this.state.history;
     const current = history[history.length - 1];
-    const squares = current.squares.slice();
+    const squares = current.squares;
     if (calculateWinner(squares) || squares[i]) {
       return;
     }
     squares[i] = this.state.xIsNext ? "X" : "O";
 
 	TicTacToeStore.updateTable(squares);
-
   }
 
   jumpTo(step) {
-    this.setState({
-      stepNumber: step,
-      xIsNext: (step % 2) === 0
-    });
+	  TicTacToeStore.updateStep(step);
   }
 
   render() {
     const history = this.state.history;
     const current = history[this.state.stepNumber];
-    const winner = calculateWinner(current.squares);
-
+    const winner = calculateWinner(current);
     const moves = history.map((step, move) => {
       const desc = move ?
         'Go to move #' + move :
@@ -54,7 +60,7 @@ class Game extends React.Component {
     } else {
       status = "Next player: " + (this.state.xIsNext ? "X" : "O");
     }
-
+	console.log(this.state);
     return (
       <div className="game">
         <div className="game-board">

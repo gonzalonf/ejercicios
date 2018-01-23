@@ -1,15 +1,15 @@
 import { EventEmitter } from 'events';
 import dispatcher from '../dispatcher';
 import { calculateWinner } from '../components/TicTacToe/helpers';
-
+import initialData from '../components/TicTacToe/data.json';
 
 class TicTacToeStore extends EventEmitter {
 	constructor() {
 		super();
-		this.initialState = {
+		this.table = {
 	      history: [
 	        {
-	          squares: Array(9).fill(null)
+	          squares: initialData
 	        }
 	      ],
 	      stepNumber: 0,
@@ -17,20 +17,38 @@ class TicTacToeStore extends EventEmitter {
 	    };
 	}
 
-	getInitialState() {
-		return this.initialState;
+	getState() {
+		return this.table;
 	}
 
 	updateTable(squares) {
-		this.setState({
-			history: this.history.concat([{squares: squares}]),
-			stepNumber: this.history.length,
-			xIsNext: !this.state.xIsNext
-		});
+		this.table = {
+			history: [...this.table.history, {squares}],
+			stepNumber: this.table.history.length,
+			xIsNext: !this.table.xIsNext
+		};
 		this.emit('change');
     }
+	updateStep(step) {
+		this.table.stepNumber = step;
+		this.table.xIsNext = (step % 2) === 0;
+		this.emit('change');
+	}
+
+	handleActions(action) {
+		switch (action.type) {
+			case 'UPDATE_GAME_TABLE':
+				this.updateTable();
+				break;
+			case 'UPDATE_GAME_MOVE':
+				this.updateStep();
+				break;
+			default:
+
+		}
+	}
 }
 
 const ticTacToeStore = new TicTacToeStore();
-// dispatcher.register(TicTacToeStore.handleActions.bind(TicTacToeStore));
+dispatcher.register(ticTacToeStore.handleActions.bind(ticTacToeStore));
 export default ticTacToeStore;
