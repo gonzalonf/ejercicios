@@ -30,9 +30,9 @@ class Game extends React.Component {
     if (calculateWinner(squares) || squares[i]) {
       return;
     }
-    squares[i] = this.state.xIsNext ? "X" : "O";
-
-	TicTacToeStore.updateTable(squares);
+	const newSquares = squares.slice(0);
+    newSquares[i] = this.state.xIsNext ? "X" : "O";
+	TicTacToeStore.updateTable(newSquares);
   }
 
   jumpTo(step) {
@@ -60,7 +60,6 @@ class Game extends React.Component {
     } else {
       status = "Next player: " + (this.state.xIsNext ? "X" : "O");
     }
-	console.log(this.state);
     return (
       <div className="game">
         <div className="game-board">
